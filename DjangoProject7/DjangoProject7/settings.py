@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-i$uyh4=bvoqdwk^l_&08!+##)-s-nzt5l$hs6@=ncnu%y6v&dp'
-
+SECURE_SSL_REDIRECT = False
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -148,3 +148,4 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+SECURE_HSTS_SECONDS = 0

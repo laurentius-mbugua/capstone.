@@ -22,7 +22,7 @@ from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
-from Inventory.views import CategoryViewSet, InventoryItemViewSet, InventoryChangeLogViewSet
+from Inventory.views import CategoryViewSet, InventoryItemViewSet, InventoryChangeLogViewSet,home
 
 # from .views import CategoryViewSet, InventoryItemViewSet, InventoryChangeLogViewSet
 # Schema View
@@ -44,6 +44,7 @@ router.register('categories', CategoryViewSet, basename='category')
 router.register('items', InventoryItemViewSet, basename='inventoryitem')
 router.register('changelog', InventoryChangeLogViewSet, basename='inventorychangelog')
 urlpatterns = [
+path('', home),
     path('admin/', admin.site.urls),
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/', include(router.urls)),
